@@ -1,0 +1,9 @@
+{% if latest_news %}
+    <ul>
+        {% for news in latest_news %}
+        <li><a href="{% url 'news:detail' news.id%}">{{ news.headline}}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p> No News Yet.</p>
+{% endif %}

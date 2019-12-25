@@ -1,0 +1,7 @@
+{% load static %}
+
+<h1> {{ news.headline }}</h1>
+<p> {{ news.news_content }} </p>
+<img src=" {{ news.image.url }}" alt="{{ news.headline }}"/>
+<small> {{ news.writer}} </small>
+<small> {{ news.pub_date}} </small>
