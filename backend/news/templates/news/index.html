@@ -1,3 +1,6 @@
+{% load {{base.html}}%}
+
+{% block content %}
 {% if latest_news %}
     <ul>
         {% for news in latest_news %}
@@ -7,3 +10,5 @@
 {% else %}
     <p> No News Yet.</p>
 {% endif %}
+
+{% endblock content }

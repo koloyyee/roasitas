@@ -1,30 +1,31 @@
-import React from 'react';
-import logo from "./static/Roasita's-Black-font.png";
-import './css/App.css';
-import Posts from './pages/Blog'
-import { Provider } from 'react-redux';
-import store from './store';
-
-
-
+import React from "react";
+import "./css/App.css";
+import Posts from "./components/Posts";
+import { Provider } from "react-redux";
+import store from "./store";
+// import Subscribe from './pages/Subscribe'
+import Nav from "./components/Nav";
+import { Route, Switch, BrowserRouter } from "react-router-dom";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Menu from "./pages/Menu";
 
 const App: React.FC = () => {
   return (
     <Provider store={store}>
+      <BrowserRouter>
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="roasitas_logo" alt="logo" />
-          <p>
-            Roasitas. 
-            <br/>
-            A Quest For Roast Chicken. 
-          </p>
-        </header>
-        <Posts />
+          <Nav />
+          <Switch>
+            <Route path="/" exact={true} component={Home}   />
+            <Route path="/menu" exact={true} component={Menu}   />
+            <Route path="/news" exact={true} component={Posts} />
+            <Route path="/about" exact={true} component={About} />
+          </Switch>
       </div>
-
+      </BrowserRouter>
     </Provider>
   );
-}
+};
 
 export default App;

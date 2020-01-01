@@ -14,7 +14,7 @@ declare global{
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export interface IRootState {
-    allNews:INewsState 
+    allNews:INewsState
 }
 
 export type IRootAction = INewsAction

@@ -7,7 +7,7 @@ export interface IWriter {
 export interface INews{
     headline :string,
     news_content:string,
-    writer :string,
+    writer :IWriter,
     image: string,
     pub_date: string
 }
