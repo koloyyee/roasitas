@@ -6,7 +6,8 @@ class Writer(models.Model):
         return self.name
 
 class News(models.Model):
-    headline = models.CharField(max_length=250)
+    slug = models.SlugField(null=True)
+    headline = models.CharField(max_length=250,   )
     news_content = models.TextField()
     writer = models.ForeignKey(Writer, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='images/')
@@ -14,3 +15,11 @@ class News(models.Model):
     
     def __str__(self):
         return self.headline
+
+class EmailSubscription(models.Model):
+    subscriber = models.CharField(max_length=50)
+    email = models.EmailField( max_length=254)
+
+    def __str__(self):
+        return self.email
+        

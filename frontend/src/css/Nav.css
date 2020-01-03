@@ -20,3 +20,6 @@
     font-size: 1.5em;
     text-decoration: none;
 }
+.nav_item:visited{
+    color: inherit
+}

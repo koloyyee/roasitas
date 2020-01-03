@@ -21,28 +21,27 @@ from django.conf.urls import url
 from django.conf.urls.static import static
 from rest_framework import routers, serializers, viewsets
 from news import views as newsViews
-from subscription import views as subscriptionViews
 from news.models import Writer, News
-from subscription.models import EmailMember
 from news.serializers import WriterSerializer, NewsSerializer
-from subscription.serializers import EmailMemberSerializer
 
 
 router = routers.DefaultRouter()
 router.register(r'writers', newsViews.WriterViewSet)
 router.register(r'blog', newsViews.NewsViewSet)
-router.register(r'subscription', subscriptionViews.EmailMemberViewSet)
 
 
 urlpatterns = [
-    path('', include('pages.urls')),
+    # path('', include('pages.urls')),
     path('news/', include('news.urls')),
-    path('news/<pk>/', include('news.urls')),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('/tinymce/', include('tinymce.urls')),
 
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+] 
 
 
+if settings.DEBUG:
+     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

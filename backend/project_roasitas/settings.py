@@ -43,10 +43,9 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'news',
     'pages',
-    'subscription',
     'rest_framework',
     'corsheaders',
-    'sorl.thumbnail',
+    'tinymce',
 ]
 
 MIDDLEWARE = [
@@ -141,6 +140,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+VENV_PATH =os.path.dirname(BASE_DIR)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'news/media')
@@ -152,3 +152,17 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+TINYMCE_DEFAULT_CONFIG = {
+       'selector': 'textarea',
+    'theme': 'modern',
+    'plugins': 'link image preview codesample contextmenu table code lists',
+    'toolbar1': 'formatselect | bold italic underline | alignleft aligncenter alignright alignjustify '
+               '| bullist numlist | outdent indent | table | link image | codesample | preview code',
+    'contextmenu': 'formats | link image',
+    'menubar': False,
+    'inline': False,
+    'statusbar': True,
+    'width': 'auto',
+    'height': 360,
+}

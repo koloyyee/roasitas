@@ -9,6 +9,7 @@ import { Route, Switch, BrowserRouter } from "react-router-dom";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Menu from "./pages/Menu";
+import Construction from "./pages/Construction";
 
 const App: React.FC = () => {
   return (
@@ -16,12 +17,13 @@ const App: React.FC = () => {
       <BrowserRouter>
       <div className="App">
           <Nav />
-          <Switch>
+          <Construction />
+          {/* <Switch>
             <Route path="/" exact={true} component={Home}   />
             <Route path="/menu" exact={true} component={Menu}   />
             <Route path="/news" exact={true} component={Posts} />
             <Route path="/about" exact={true} component={About} />
-          </Switch>
+          </Switch> */}
       </div>
       </BrowserRouter>
     </Provider>

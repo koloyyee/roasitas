@@ -1,4 +1,4 @@
-import {INews, INewsState } from "./state"
+import {INews } from "./state"
 
 type FAILED = "NEWS_LOAD_FAILED"
 

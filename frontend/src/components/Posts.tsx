@@ -5,7 +5,7 @@ import { INews } from '../redux/news/state';
 import {loadNews} from '../redux/news/thunks'
 import '../css/Blog.css'
 import { Paper, Grid } from '@material-ui/core';
-import { Link, Route, NavLink, withRouter } from 'react-router-dom';
+import {Route, NavLink, withRouter } from 'react-router-dom';
 import Story from './Story';
 
 interface props{

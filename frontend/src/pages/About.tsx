@@ -3,23 +3,8 @@ import hotBird from '../static/spicy-chicken-cutout.png'
 import "../css/About.css"
 
 
-interface props{
-    
-}
-
-interface state{
-
-}
-
-class About extends React.Component<props, state>{
-
-    constructor(props:props){
-        super(props)
-
-    }
-
-    public render(){
-        return (
+const About:React.FC =()=>{
+    return(
             <div className = "about" id='about'>
                 <img className = "hot_bird" src={hotBird} alt="hot bird"/>
                 <h1 id= "about_title"> Roasita's</h1>
@@ -30,8 +15,6 @@ class About extends React.Component<props, state>{
                 every bite you take will be delicious, healthy and guilt-free!
                 </p>
             </div>
-        )
-    }
+    )
 }
-
 export default About

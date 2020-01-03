@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { loadSingleNews } from '../redux/news/thunks'
-import { INews, INewsState } from '../redux/news/state'
+import { INewsState } from '../redux/news/state'
 import { IRootState } from '../store'
 import { connect } from 'react-redux'
 
@@ -18,7 +18,7 @@ const Story:React.FC<props> = ({news, id}) => {
             {news.map((story, i) =>
                 <div key={i}> 
                 <h1>{ story.headline }</h1>
-                <img src= {story.image}/>
+                <img src= {story.image} alt={story.headline}/>
                 <p> {story.news_content} </p>
                 <small>{story.pub_date}</small>
             </div>)}

@@ -1,7 +1,7 @@
 import {ThunkResult} from '../../store'
 import { Dispatch } from 'react'
 import { INewsAction, newsLoadSuccess, newsActionFailed, singleNewsLoadSuccess } from './action'
-import { INewsState, INews } from './state'
+import { INews } from './state'
 
 
 const {REACT_APP_API_SERVER} = process.env
