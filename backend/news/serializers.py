@@ -11,4 +11,5 @@ class WriterSerializer(serializers.HyperlinkedModelSerializer):
 class NewsSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = News
-        fields = ['headline','writer','news_content','image','pub_date']
+        fields = ['slug','headline','writer','news_content','image','pub_date']
+        extra_field_kwargs = {'url':{'lookup_field':'slug'}}

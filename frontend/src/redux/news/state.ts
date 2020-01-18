@@ -5,6 +5,7 @@ export interface IWriter {
 }
 
 export interface INews{
+    slug:string
     headline :string,
     news_content:string,
     writer :IWriter,

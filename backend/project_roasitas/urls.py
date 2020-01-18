@@ -23,18 +23,26 @@ from rest_framework import routers, serializers, viewsets
 from news import views as newsViews
 from news.models import Writer, News
 from news.serializers import WriterSerializer, NewsSerializer
+from food import views as foodViews
 
 
 router = routers.DefaultRouter()
 router.register(r'writers', newsViews.WriterViewSet)
-router.register(r'blog', newsViews.NewsViewSet)
+router.register(r'news', newsViews.NewsViewSet)
+router.register(r'food/category', foodViews.CategoryView)
+router.register(r'food/unit', foodViews.MeasurementUnitView)
+router.register(r'food/recipe_ingredient', foodViews.RecipeIngredientView)
+router.register(r'food/ingredient', foodViews.IngredientView)
+# router.register(r'food/recipe', foodViews.RecipeView)
+router.register(r'menu', foodViews.MenuView)
+
 
 
 urlpatterns = [
-    # path('', include('pages.urls')),
+    # path('', include('news.urls')),
     path('news/', include('news.urls')),
     path('polls/', include('polls.urls')),
-    path('admin/', admin.site.urls),
+    path('', admin.site.urls),
     path('api/', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('/tinymce/', include('tinymce.urls')),

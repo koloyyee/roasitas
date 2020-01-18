@@ -8,7 +8,7 @@ const {REACT_APP_API_SERVER} = process.env
 
 export const loadNews = ():ThunkResult<void> =>{
     return async(dispatch:Dispatch<INewsAction>)=>{
-        const res = await fetch(`${REACT_APP_API_SERVER}/api/blog`,{
+        const res = await fetch(`${REACT_APP_API_SERVER}/api/news`,{
             method: "GET"
         })
         const result:INews[] = await res.json()
@@ -20,9 +20,9 @@ export const loadNews = ():ThunkResult<void> =>{
     }
 }
 
-export const loadSingleNews= (id:number):ThunkResult<void>=>{
+export const loadSingleNews= (slug:string):ThunkResult<void>=>{
     return async (dispatch:Dispatch<INewsAction>) =>{
-        const res = await fetch(`${REACT_APP_API_SERVER}/api/blog/${id}`,{
+        const res = await fetch(`${REACT_APP_API_SERVER}/api/news/${slug}`,{
             method:"GET"
         })
         const result:INews = await res.json()

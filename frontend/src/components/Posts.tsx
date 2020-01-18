@@ -3,21 +3,25 @@ import { IRootState } from '../store';
 import { connect} from 'react-redux';
 import { INews } from '../redux/news/state';
 import {loadNews} from '../redux/news/thunks'
-import '../css/Blog.css'
-import { Paper, Grid } from '@material-ui/core';
-import {Route, NavLink, withRouter } from 'react-router-dom';
-import Story from './Story';
+import '../css/Posts.css'
+import { Paper, Grid, Button } from '@material-ui/core';
+import {withRouter, Link } from 'react-router-dom';
+
 
 interface props{
     news:INews[],
     loadNews: ()=>void
 }
 
+
 class Posts extends React.Component<props,{}>{
+  
     public componentDidMount(){
         this.props.loadNews()
     }
+
     public render(){
+        
         return (
                 <Grid className = "blog_section" container direction="row"
                 justify="center"
@@ -33,8 +37,9 @@ class Posts extends React.Component<props,{}>{
                                     <small>{story.pub_date}</small>
                                     <br/>
                                     
-                                    <NavLink  to ={'/news/'+i} >Fine Out More</NavLink>
-                                    <Route path={'/news/'+i} component={Story}/>
+                                    <Button variant="contained" color="secondary" >
+                                        <Link className="find_out_more" to ={`/news/${story.slug}`} >Fine Out More</Link>
+                                    </Button>
                                 </div> 
                             </Paper>
                         </Grid>
@@ -45,7 +50,6 @@ class Posts extends React.Component<props,{}>{
         )
     }
 }
-
 
 
 const mapStateToProps=(state:IRootState) =>{

@@ -40,3 +40,10 @@ Views
 
 Urls
 - why urls, and why path?
+
+
+
+deploying on Linode server with psql
+go check pg_config first, it should return error and ask to install 2 pkgs
+'sudo apt install postgresql-common'
+'sudo apt install libpq-dev'

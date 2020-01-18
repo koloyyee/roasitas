@@ -30,6 +30,8 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
+# fix django.contrib.sites error 
+SITE_ID = 1
 # Application definition
 
 INSTALLED_APPS = [
@@ -43,9 +45,11 @@ INSTALLED_APPS = [
     'polls.apps.PollsConfig',
     'news',
     'pages',
+    'food',
     'rest_framework',
     'corsheaders',
     'tinymce',
+    'anymail',
 ]
 
 MIDDLEWARE = [
@@ -166,3 +170,4 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': 'auto',
     'height': 360,
 }
+

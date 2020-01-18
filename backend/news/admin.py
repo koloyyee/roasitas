@@ -8,6 +8,7 @@ class WriterAdmin(admin.ModelAdmin):
 
 class NewsAdmin(admin.ModelAdmin):
     fieldsets = [
+        ("Slug" , {'fields':['slug']}),
         ('Headline',{'fields': ['headline']}),
         ('News Content',{'fields': ['news_content']}),
         ('Writer',{'fields': ['writer']}),

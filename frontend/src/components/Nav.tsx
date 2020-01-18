@@ -18,9 +18,9 @@ class Nav extends React.Component{
                             centered
                         >
                             <Link to="/" ><img src ={logo} className = "nav_logo" alt="logo"/></Link>
-                            {/* <Link className = "nav_item"  to="/menu" color='textPrimary' > Menu</Link>
+                            <Link className = "nav_item"  to="/menu" color='textPrimary' > Menu</Link>
                             <Link className = "nav_item"  to="/news" color='textPrimary' > News</Link>
-                            <Link className = "nav_item"  to="/about" color='textPrimary' > About</Link> */}
+                            <Link className = "nav_item"  to="/about" color='textPrimary' > About</Link>
                         </Tabs>
                     </Paper>
                     </AppBar>

@@ -4,6 +4,7 @@ import { INewsState } from "./state"
 const initialState = {
     news:[
         {
+        slug:"",
         headline :'',
         news_content:'',
         writer :{ name: ''},
