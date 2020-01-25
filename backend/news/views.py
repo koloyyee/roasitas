@@ -2,12 +2,20 @@ from django.shortcuts import render
 from .models import News
 from django.template import loader
 from django.views import generic
-
-
 from django.contrib.auth.models import User, Group
 from .models import Writer, News
 from rest_framework import viewsets
 from .serializers import WriterSerializer, NewsSerializer
+
+# class index(request):
+#     latest_news_list = News.objects.order_by("-pub_date")[:5]
+#     output
+# class detail(request, news_id):
+
+# class article(request, news_id):
+
+# class write_post(request, news_id):
+
 
 class ArticleView(generic.ListView):
     template_name = 'news/index.html'

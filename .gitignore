@@ -1,5 +1,6 @@
-.env/
+.env
 venv/
 node_module/
 revise.md/
 MODELS.md/
+deploy/

@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'news',
     'pages',
     'food',
+    'users',
     'rest_framework',
     'corsheaders',
     'tinymce',
