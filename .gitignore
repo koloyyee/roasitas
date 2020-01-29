@@ -1,7 +1,34 @@
 .env
-venv/
 media/
+venv/
 node_modules/
-revise.md/
-MODELS.md/
-deploy
+revise.md
+MODELS.md
+deploy/
+
+*.log
+*.pot
+*.pyc
+
+.vscode/* 
+!.vscode/settings.json 
+!.vscode/tasks.json 
+!.vscode/launch.json 
+!.vscode/extensions.json 
+.history
+
+# Python
+__pycache__
+*.pyc
+.project
+.pydevproject
+
+# Django
+local_settings.py
+media/*
+static/*
+# Coverage
+.coverage
+htmlcov
+# node
+node_modules/*
