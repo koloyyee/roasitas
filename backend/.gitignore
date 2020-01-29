@@ -1,6 +1,6 @@
 .env
 venv/
-node_module/
-revise.md/
-MODELS.md/
+node_modules/
+revise.md
+MODELS.md
 deploy/

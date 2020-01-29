@@ -1,6 +1,7 @@
 .env
 venv/
-node_module/
+media/
+node_modules/
 revise.md/
 MODELS.md/
-deploy/
+deploy

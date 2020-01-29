@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+
+{% block content%}
+    <div class = "container">
+        <h3> Contributor Registration <br/>作者登記</h3>
+        <form method ="POST">
+            {% csrf_token %}
+            <fieldset class = "form-group">
+            <legend class = "input-field col s6"> Register Here</legend>
+                {{ form.as_p }}
+                <button class="waves-effect waves-light btn"  type="submit"> Sign Up</button>
+            </fieldset>
+         </form>
+        <div class = "col-3 ">
+            <small> Already Have An Account? <a href="{% url 'login' %}"> Sign In </a> </small>
+         </div>
+    </div>
+{% endblock content %}

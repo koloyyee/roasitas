@@ -1,0 +1,45 @@
+{% extends "base.html"%}
+{% block content %}
+    <h4 class="user_news_title"> {{view.kwargs.username }}'s {{ page_obj.paginator.count}} articles.</h4>
+    {% if latest_news %}
+        <ul>
+            {% for news in latest_news %} 
+            <div class="card horizontal">
+            <li>
+            <img class= "article-img" src = "{{ news.writer.profile.image.url}}" />
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <p>{{ news.headline}} </p>
+                        <p>{{ news.slug}} </p>
+                        <a href="{% url 'news:all_user_news' news.writer.username %}"> Written By:{{ news.writer}}</a>
+                    </div>
+                    <div class="card-content">
+                        <a href="{% url 'news:detail' news.id%}"> Read More 閱讀全篇</a>
+                    </div>
+                </div>
+            </li>
+            </div>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p> No News Yet.</p>
+    {% endif %}
+    {% if is_paginated %}
+        {% if page_obj.has_previous %}
+            <a class = "btn" href="?page=1"> First 首頁</a>
+            <a class = "btn" href="?page={{ page_obj.previous_page_number}}"> Previous 前頁 </a>
+        {% endif %}
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num%}
+                <a class = "btn " href="?page={{num}}"> {{num}}</a>
+            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                <a class = "btn" href="?page={{num}}"> {{num}}</a>
+
+            {% endif %}
+        {% endfor %}
+            {% if page_obj.has_next %}
+                <a class = "btn" href="?page={{ page_obj.next_page_number}}"> Next 下頁</a>
+                <a class = "btn" href="?page={{ page_obj.paginator.num_pages}}"> Last 最後頁 </a>
+         {% endif %}
+    {% endif %}
+{% endblock content%}

@@ -1,0 +1,17 @@
+{% extends "base.html"%}
+    {% load static%}
+    {% block content %}
+        <div class="headline">
+            <h1> {{ detail.headline }}</h1>
+            <small>{{ detail.pub_date|date:"F d,Y"}}</small>
+        </div>
+        <p> {{ detail.news_content }} </p>
+        <img src={{ detail.image.url }} alt="{{ detail.headline }}"/>
+        <a href="{% url 'news:all_user_news' detail.writer.username %}">Written By:  {{ detail.writer}}</a>
+        {% if detail.writer == user %}
+            <div class="update_delete_article">
+                 <a class="waves-effect waves-light btn " href="{% url 'news:update' detail.id%}">Edit Article</a>
+                 <a class="waves-effect waves-light btn red darken-4" href="{% url 'news:delete' detail.id%}">Delete Article</a>
+            </div>
+        {% endif %}
+    {% endblock content%}

@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+
+{% block content%}
+    <div class = "container">
+        <h3> Upload News Article<br/> 上載新聞</h3>
+        <form method ="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class = "form-group">
+            <legend class = "input-field col s6"> News Article</legend>
+                {{ form.as_p }}
+                <button class="waves-effect waves-light btn"  type="submit"> Post</button>
+            </fieldset>
+         </form>
+    </div>
+{% endblock content %}

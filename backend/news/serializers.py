@@ -1,11 +1,13 @@
 # from django.contrib.auth.models import User, Group
 from .models import Writer, News
+from django.contrib.auth.models import User
 from rest_framework import serializers
 
-class WriterSerializer(serializers.HyperlinkedModelSerializer):
+class UserSerializer(serializers.HyperlinkedModelSerializer):
+    url = serializers.HyperlinkedIdentityField(view_name="user-detail")
     class Meta:
-        model = Writer
-        fields = ['name']
+        model = User
+        fields = ['url','username']
 
 
 class NewsSerializer(serializers.HyperlinkedModelSerializer):
