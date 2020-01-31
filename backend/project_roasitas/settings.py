@@ -34,9 +34,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
-    # 'users.apps.UsersConfig',
-    "users",
-    'news',
+    'users.apps.UsersConfig',
+    # "users",
+    'news.apps.NewsConfig',
     'rest_framework',
     'corsheaders',
     'tinymce',
@@ -165,3 +165,11 @@ TINYMCE_DEFAULT_CONFIG = {
 
 LOGIN_REDIRECT_URL = 'news:all_news'
 LOGIN_URL = 'login'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_PASSWORD')
