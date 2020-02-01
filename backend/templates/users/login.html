@@ -2,16 +2,16 @@
 
 {% block content%}
     <div class = "container">
-        <h3> Contributor Registration <br/>作者登記</h3>
+        <h3> Contributor Registration <br/>作者登入</h3>
         <form method ="POST">
             {% csrf_token %}
             <fieldset class = "form-group">
                 <legend class = "input-field col s6"> Login</legend>
                 {{ form.as_p }}
                 <button class="waves-effect waves-light btn"  type="submit"> Sign In</button>
-                {% comment %} <div class = "col-3 ">
+                <div class = "col-3 ">
                     <small> Forgot Password? <a href="{% url 'password_reset' %}"> Reset Password </a> </small>
-                </div> {% endcomment %}
+                </div>
             </fieldset>
          </form>
         <div class = "col-3 ">

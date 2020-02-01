@@ -14,19 +14,7 @@
         <title>Roasita's Editor</title>
 </head>
 <body>
-        <ul class="sidenav" id="mobile-demo">
-            <li><a href="{%  url 'news:all_news'%}">All News</a></li>
-            <li><a href="{%  url 'news:create'%}"> Write Story</a></li>
-            <li><small> Hi! {{ user.username}} </small></li>
-            {% if user.is_authenticated %}
-                <li><small> Hi! {{ user.username}} </small></li>
-                <li><a href="{%  url 'profile' %}">Profile</a></li>
-                <li><a href="{%  url 'logout' %}">Logout</a></li>
-            {% else %}
-                <li><a href="{%  url 'login' %}">Login</a></li>
-                <li><a href="{%  url 'register' %}">Register</a></li>
-            {% endif %}
-        </ul>
+
 
         <nav>
         <div class="nav-wrapper">
@@ -45,9 +33,26 @@
                 {% endif %}
         <li><small > Hi! {{ user.username}} </small></li>
         </ul>
-
         </div>
         </nav>
+
+
+        <ul class="sidenav" id="mobile-demo">
+            <li><a href="{%  url 'news:all_news'%}">All News</a></li>
+            <li><a href="{%  url 'news:create'%}"> Write Story</a></li>
+            <li><small> Hi! {{ user.username}} </small></li>
+            {% if user.is_authenticated %}
+                <li><small> Hi! {{ user.username}} </small></li>
+                <li><a href="{%  url 'profile' %}">Profile</a></li>
+                <li><a href="{%  url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{%  url 'login' %}">Login</a></li>
+                <li><a href="{%  url 'register' %}">Register</a></li>
+            {% endif %}
+        </ul>
+  
+
+
         <div class="container">
                 {% if messages %}
                 {% for message in messages%}
@@ -82,8 +87,7 @@
             </div>
           </div>
         </footer>
-        {% comment %} <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> {% endcomment %}
-        <script src="{% static 'js/news_index.js'%}"> </script>
         <script type='text/javascript' src={% static "js/materialize.min.js"%}></script>
+        <script src="{% static 'js/news_index.js'%}"> </script>
 </body>
 </html>
