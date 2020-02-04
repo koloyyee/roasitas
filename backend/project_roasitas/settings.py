@@ -164,6 +164,7 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 LOGIN_REDIRECT_URL = 'news:all_news'
+LOGOUT_REDIRECT_URL = 'login'
 LOGIN_URL = 'login'
 
 
