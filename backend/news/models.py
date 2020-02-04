@@ -14,7 +14,7 @@ class News(models.Model):
     headline = models.CharField(max_length=250)
     news_content = models.TextField()
     writer = models.ForeignKey(User, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='news_image')
+    image = models.ImageField(null=True, upload_to='news_image', )
     pub_date = models.DateField('Published Date', default=timezone.now)
     
     def __str__(self):
@@ -22,7 +22,7 @@ class News(models.Model):
 
     def save(self):
         super().save()
-        img = Image.register_open(self.image.path)
+        img = Image.open(self.image.path)
         if img.height > 600 or img.width > 800:
             output_size = (600, 800)
             img.thumbnail(output_size)
