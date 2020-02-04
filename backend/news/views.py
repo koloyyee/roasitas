@@ -38,6 +38,7 @@ class CreateNewsView(LoginRequiredMixin, generic.CreateView):
 
     def form_valid(self, form):
         form.instance.writer = self.request.user
+        print(form.instance.writer)
         return super().form_valid(form)
 
 class AllNewsView(generic.ListView):
@@ -81,7 +82,7 @@ class DetailNewsView(generic.DetailView):
 
 class DeleteNewsView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     model = News
-    success_url = '/news'
+    success_url = ''
 
     def test_func(self):
         post = self.get_object()
