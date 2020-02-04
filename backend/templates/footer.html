@@ -1,0 +1,31 @@
+
+{% load static %}
+
+ <footer class="page-footer" style="margin-top: 1em">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Roasita's Editor</h5>
+                <p class="grey-text text-lighten-4">A Quest For Delicious Chicken.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a href="{%  url 'news:all_news'%}">All News</a></li>
+                  <li><a href="{%  url 'news:create'%}"> Write Story</a></li>
+                  <a href="https://www.instagram.com/roasitas/" target="_blank"> Roasita's</a>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © {% now 'Y' %} Copyright Text
+            </div>
+          </div>
+        </footer>
+        <script type='text/javascript' src={% static "js/materialize.min.js"%}></script>
+        <script src="{% static 'js/news_index.js'%}"> </script>
+    </body>
+</html>

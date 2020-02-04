@@ -1,15 +1,11 @@
 // document.querySelector(".dropdown-trigger").dropdown();
 
-const hello = () =>{
-  console.log('hello world');
-}
-
-hello()
-const sideNav=()=>{
-    document.addEventListener('DOMContentLoaded', function() {
-        var elems = document.querySelectorAll('.sidenav');
-        var instances = M.Sidenav.init(elems, options);
-      });
-
-};
-sideNav()
+const elem = document.querySelector('.sidenav');
+const instance = M.Sidenav.init(elem, {
+    onOpenStart: function () {
+        console.log("I trigger as soon as the page is loaded");
+    },
+    onCloseEnd: function () {
+        console.log("same");
+    }
+});

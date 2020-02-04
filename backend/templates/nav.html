@@ -1,0 +1,36 @@
+{% load static %}
+
+        <nav>
+        <div class="nav-wrapper">
+        <a href="/news" class="brand-logo" style="margin-left:1em">Roasita's Editor</a>
+
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger" onclick="sideNav"><i class="material-icons">menu</i></a>
+        <ul class="right hide-on-med-and-down" style="padding-right:1em">
+                <li><a href="{%  url 'news:all_news'%}">All News</a></li>
+                <li><a href="{%  url 'news:create'%}"> Write Story</a></li>
+                {% if user.is_authenticated %}
+                        {% comment %} <li><a href="{%  url 'profile' %}">Profile</a></li> {% endcomment %}
+                        <li><a href="{%  url 'logout' %}">Logout</a></li>
+                {% else %}
+                        <li><a href="{%  url 'login' %}">Login</a></li>
+                        <li><a href="{%  url 'register' %}">Register</a></li>
+                {% endif %}
+        <li><small > Hi! {{ user.username}} </small></li>
+        </ul>
+        </div>
+        </nav>
+
+
+        <ul class="sidenav" id="mobile-demo">
+            <li > <p style = 'margin-left:2em'>Hi! {{ user.username}}</p></li>
+            <li><a href="{%  url 'news:all_news'%}">All News</a></li>
+            <li><a href="{%  url 'news:create'%}"> Write Story</a></li>
+            {% if user.is_authenticated %}
+                {% comment %} <li><a href="{%  url 'profile' %}">Profile</a></li> {% endcomment %}
+                <li><a href="{%  url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{%  url 'login' %}">Login</a></li>
+                <li><a href="{%  url 'register' %}">Register</a></li>
+            {% endif %}
+        </ul>
+  
