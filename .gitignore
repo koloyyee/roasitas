@@ -1,5 +1,5 @@
 .env
-# media/
+media/
 venv/
 node_modules/
 revise.md
