@@ -9,15 +9,17 @@ class Profile(models.Model):
     image = models.ImageField(default = 'default.jpg', upload_to='profile_pic')
 
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return f'{self.user.username} Profile'  
 
-    def save(self, *args, **kwargs):
-        super(Profile, self).save(*args, **kwargs)
-        img = Image.open(self.image.path)
-        if img.height > 300 or img.width > 300:
-            output_size = (300,300)
-            img.thumbnail(output_size)
-            img.save(self.image.path)
+    # For resizing images purposes
+    # def save(self, *args, **kwargs):
+    #     super(Profile, self).save(*args, **kwargs)
+    #     # super().save(*args, **kwargs) correction from corey schafer S3 file upload
+    #     img = Image.open(self.image.path)
+    #     if img.height > 300 or img.width > 300:
+    #         output_size = (300,300)
+    #         img.thumbnail(output_size)
+    #         img.save(self.image.path)
 
 # def create_profile(sender , **kwargs):
 #     if kwargs['created']:
