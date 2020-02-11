@@ -4,7 +4,7 @@ import { connect} from 'react-redux';
 import { INews } from '../redux/news/state';
 import {loadNews} from '../redux/news/thunks'
 import '../css/Posts.css'
-import { Paper, Grid, Button } from '@material-ui/core';
+import { Paper, Grid, Button, Container } from '@material-ui/core';
 import {withRouter, Link } from 'react-router-dom';
 
 
@@ -23,6 +23,7 @@ class Posts extends React.Component<props,{}>{
     public render(){
         
         return (
+            <Container maxWidth='lg'>
                 <Grid className = "blog_section" container direction="row"
                 justify="center"
                 spacing={3}>
@@ -47,6 +48,8 @@ class Posts extends React.Component<props,{}>{
                 )}) : <p>No News Yet.</p>
                 }
                 </Grid>
+                
+            </Container>
         )
     }
 }

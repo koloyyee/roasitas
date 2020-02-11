@@ -6,7 +6,7 @@
             {% for news in latest_news %} 
             <div class="card horizontal">
             <li>
-            <img class= "article-img" src = "{{ news.writer.profile.image.url}}" />
+            <img class= "circle" src = "{{ news.writer.profile.image.url}}" />
                 <div class="card-stacked">
                     <div class="card-content">
                         <p>{{ news.headline}} </p>
@@ -26,14 +26,14 @@
     {% endif %}
     {% if is_paginated %}
         {% if page_obj.has_previous %}
-            <a class = "btn" href="?page=1"> First 首頁</a>
-            <a class = "btn" href="?page={{ page_obj.previous_page_number}}"> Previous 前頁 </a>
+            <a class = "btn blue-grey" href="?page=1"> First 首頁</a>
+            <a class = "btn blue-grey-3" href="?page={{ page_obj.previous_page_number}}"> Previous 前頁 </a>
         {% endif %}
         {% for num in page_obj.paginator.page_range %}
             {% if page_obj.number == num%}
-                <a class = "btn " href="?page={{num}}"> {{num}}</a>
+                <a class = "btn blue-grey " href="?page={{num}}"> {{num}}</a>
             {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
-                <a class = "btn" href="?page={{num}}"> {{num}}</a>
+                <a class = "btn blue-grey" href="?page={{num}}"> {{num}}</a>
 
             {% endif %}
         {% endfor %}

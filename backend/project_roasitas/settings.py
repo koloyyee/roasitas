@@ -35,8 +35,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
     'users.apps.UsersConfig',
-    # "users",
     'news.apps.NewsConfig',
+    'graphene_django',
     'rest_framework',
     'corsheaders',
     'tinymce',
@@ -75,6 +75,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'project_roasitas.wsgi.application'
+
+GRAPHENE={
+    'SCHEMA' : 'gql.schema.schema'
+}
 
 
 # Database

@@ -8,3 +8,12 @@ The technology behind this website will be Django, GraphQL, React.
 
 This project always meant for me to build something useful, 
 I would to slowly convert this into an e-commerce site for order the chicken.
+
+
+
+
+
+
+
+
+

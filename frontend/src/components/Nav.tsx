@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import {Paper, Tabs, AppBar } from '@material-ui/core'
 import logo from "../static/Roasita's-2-02.png";
 import '../css/Nav.css'
@@ -8,7 +8,7 @@ class Nav extends React.Component{
     
     public render(){
         return(
-                    <AppBar className="nav_bar" position="sticky" color='default'>
+                <AppBar className="nav_bar" position="sticky" color='default'>
                     <Paper>
                         <Tabs
                             className="nav"
@@ -23,7 +23,7 @@ class Nav extends React.Component{
                             <Link className = "nav_item"  to="/about" color='textPrimary' > About</Link>
                         </Tabs>
                     </Paper>
-                    </AppBar>
+                </AppBar>
         )
     }
 }

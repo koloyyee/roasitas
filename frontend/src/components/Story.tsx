@@ -21,19 +21,27 @@ const Story:React.FC<props> = ({news,match}) => {
         history.push('/news')
     }
 
-
-    useEffect(()=>{loadSingleNews(match.params.slug)})
+    const slug =  match.params.slug
+    useEffect(()=>{loadSingleNews(slug)})
+    const singleNews = news.find(news => news.slug === slug)
+    
     return( 
         <Container maxWidth='md' >
-             {news.map((story, i) =>
-            <div key={i}> 
-            <h1>{ story.headline }</h1>
-            <img className='story_img' src= {story.image} alt={story.headline}/>
-            <p> {parse(story.news_content)} </p>
-            <small>{story.pub_date}</small>
-            <br/>
-            <Button variant="contained" color="primary" onClick ={goBack}>Back</Button>
-        </div>)}
+            {singleNews? 
+           <div> 
+           <h1>{ singleNews.headline }</h1>
+           <img className='singleNews_img' src= {singleNews.image} alt={singleNews.headline}/>
+           <p> {parse(singleNews.news_content)} </p>
+           <small>{singleNews.pub_date}</small>
+           <br/>
+           <Button variant="contained" color="primary" onClick ={goBack}>Back</Button>
+       </div>
+        :
+        <div>
+            <p> No Such News</p>
+        </div>
+        }
+            
     </Container>
            
     )
