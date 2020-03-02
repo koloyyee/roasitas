@@ -33,3 +33,5 @@ static/*
 htmlcov
 # node
 node_modules/*
+
+frontend/
