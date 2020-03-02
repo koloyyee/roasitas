@@ -1,6 +1,6 @@
 .front_pic{
     height: 700px;
-    background-image: url('../static/IMG_7227.jpg');
+    background-image: url('../../static/IMG_7227.jpg');
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

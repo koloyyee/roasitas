@@ -1,6 +1,6 @@
 import React from 'react'
-import hotBird from '../static/spicy-chicken-cutout.png'
-import "../css/About.css"
+import hotBird from '../../static/spicy-chicken-cutout.png'
+import "./About.css"
 
 
 const About:React.FC =()=>{

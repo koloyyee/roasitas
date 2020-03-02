@@ -35,7 +35,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'polls.apps.PollsConfig',
     'users.apps.UsersConfig',
+    'mep.apps.MepConfig',
     'news.apps.NewsConfig',
+
     'graphene_django',
     'rest_framework',
     'corsheaders',

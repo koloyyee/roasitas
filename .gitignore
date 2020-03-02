@@ -5,6 +5,7 @@ node_modules/
 revise.md
 MODELS.md
 deploy/
+goal.txt
 
 *.log
 *.pot

@@ -1,9 +1,9 @@
 import React from 'react';
-import { IRootState } from '../store';
+import { IRootState } from '../../store';
 import { connect} from 'react-redux';
-import { INews } from '../redux/news/state';
-import {loadNews} from '../redux/news/thunks'
-import '../css/Posts.css'
+import { INews } from '../../redux/news/state';
+import {loadNews} from '../../redux/news/thunks'
+import './Posts.css'
 import { Paper, Grid, Button, Container } from '@material-ui/core';
 import {withRouter, Link } from 'react-router-dom';
 

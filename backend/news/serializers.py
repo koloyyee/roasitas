@@ -1,5 +1,5 @@
 # from django.contrib.auth.models import User, Group
-from .models import Writer, News
+from .models import News
 from django.contrib.auth.models import User
 from rest_framework import serializers
 

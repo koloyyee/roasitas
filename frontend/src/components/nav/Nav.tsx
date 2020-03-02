@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Paper, Tabs, AppBar } from '@material-ui/core'
-import logo from "../static/Roasita's-2-02.png";
-import '../css/Nav.css'
+import logo from "../../static/Roasita's-2-02.png";
+import './Nav.css'
 import {Link} from "react-router-dom";
 
 class Nav extends React.Component{
@@ -21,6 +21,8 @@ class Nav extends React.Component{
                             <Link className = "nav_item"  to="/menu" color='textPrimary' > Menu</Link>
                             <Link className = "nav_item"  to="/news" color='textPrimary' > News</Link>
                             <Link className = "nav_item"  to="/about" color='textPrimary' > About</Link>
+                            <Link className = "nav_item"  to="/mep" color='textPrimary' > MEP</Link>
+
                         </Tabs>
                     </Paper>
                 </AppBar>

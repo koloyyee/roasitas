@@ -4,7 +4,7 @@ from .models import News
 from django.template import loader
 from django.views import generic
 from django.contrib.auth.models import User, Group
-from .models import Writer, News
+from .models import News
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from rest_framework import viewsets

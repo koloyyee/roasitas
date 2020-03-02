@@ -4,10 +4,6 @@ from django.urls import reverse
 from django.utils import timezone
 from PIL import Image
 
-class Writer(models.Model):
-    name = models.CharField(max_length=250)
-    def __str__(self):
-        return self.name
 
 class News(models.Model):
     slug = models.SlugField(null=True)
@@ -20,8 +16,8 @@ class News(models.Model):
     def __str__(self):
         return self.headline
 
-    def save(self):
-        super().save()
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
         img = Image.open(self.image.path)
         if img.height > 600 or img.width > 800:
             output_size = (600, 800)

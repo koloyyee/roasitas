@@ -1,5 +1,7 @@
 aniso8601==7.0.0
 asgiref==3.2.3
+boto3==1.11.14
+botocore==1.14.14
 certifi==2019.11.28
 chardet==3.0.4
 Django==3.0.1
@@ -7,14 +9,17 @@ django-anymail==7.0.0
 django-cors-headers==3.2.0
 django-filter==2.2.0
 django-material==1.6.0
+django-storages==1.9.1
 django-tinymce==2.8.0
 django-tinymce4-lite==1.7.5
 djangorestframework==3.11.0
+docutils==0.15.2
 graphene==2.1.8
 graphene-django==2.8.1
 graphql-core==2.3.1
 graphql-relay==2.0.1
 idna==2.8
+jmespath==0.9.4
 jsmin==2.2.2
 ldif3==3.1.1
 Markdown==3.1.1
@@ -28,6 +33,7 @@ python-dotenv==0.10.3
 pytz==2019.3
 requests==2.22.0
 Rx==1.6.1
+s3transfer==0.3.3
 sib-api-v3-sdk==6.0.3
 singledispatch==3.4.0.3
 six==1.13.0

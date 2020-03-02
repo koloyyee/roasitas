@@ -1,13 +1,13 @@
 import React from "react";
-import classBird from "../static/cutout_classic.png";
-import hotBird from "../static/spicy-chicken-cutout.png";
-import pickleCucumber from "../static/topRed-Cucumber.png";
-import beet from "../static/topRed-Beet.png";
-import potato from "../static/cutout_nori_potato.png";
-import cabbage from "../static/shreddedCabbage.png";
-import redOnion from "../static/redOnion.png";
+import classBird from "../../static/cutout_classic.png";
+import hotBird from "../../static/spicy-chicken-cutout.png";
+import pickleCucumber from "../../static/topRed-Cucumber.png";
+import beet from "../../static/topRed-Beet.png";
+import potato from "../../static/cutout_nori_potato.png";
+import cabbage from "../../static/shreddedCabbage.png";
+import redOnion from "../../static/redOnion.png";
 
-import "../css/Menu.css";
+import "./Menu.css";
 import { Grid, Container } from "@material-ui/core";
 
 const Menu: React.FC = () => {

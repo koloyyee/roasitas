@@ -1,10 +1,7 @@
 from django.contrib import admin
-from .models import News, Writer, EmailSubscription
+from .models import News, EmailSubscription
 from tinymce.widgets import TinyMCE
 from django.db import models
-
-class WriterAdmin(admin.ModelAdmin):
-    model = Writer
 
 class NewsAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -26,7 +23,6 @@ class EmailSubscriptionAdmin(admin.ModelAdmin):
     model = EmailSubscription
 
 admin.site.register(News, NewsAdmin)
-admin.site.register(Writer, WriterAdmin)
 admin.site.register(EmailSubscription, EmailSubscriptionAdmin)
 
     

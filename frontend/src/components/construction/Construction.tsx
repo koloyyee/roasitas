@@ -1,6 +1,6 @@
 import React from 'react';
-import hotBird from '../static/spicy-chicken-cutout.png'
-import '../css/Construction.css'
+import hotBird from '../../static/spicy-chicken-cutout.png'
+import './Construction.css'
 
 const Construction:React.FC=()=>{
     return(

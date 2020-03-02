@@ -4,12 +4,13 @@ import { INewsState } from "./state"
 const initialState = {
     news:[
         {
-        slug:"",
-        headline :'',
-        news_content:'',
-        writer :{ name: ''},
-        image: '',
-        pub_date: ''}
+            slug:"",
+            headline :'',
+            news_content:'',
+            writer :{ name: ''},
+            image: '',
+            pub_date: ''
+        }
     ]
 }
 

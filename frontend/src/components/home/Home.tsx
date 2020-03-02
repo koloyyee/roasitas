@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "../static/Roasita's-White-font.png";
+import logo from "../../static/Roasita's-White-font.png";
 import { Container } from "@material-ui/core";
-import "../css/Home.css";
+import "./Home.css";
 
 const Home: React.FC = () => {
   return (

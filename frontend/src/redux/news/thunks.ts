@@ -1,4 +1,4 @@
-import {ThunkResult} from '../../store'
+import {ThunkResult} from 'src/store'
 import { Dispatch } from 'react'
 import { INewsAction, newsLoadSuccess, newsActionFailed, singleNewsLoadSuccess } from './action'
 import { INews } from './state'

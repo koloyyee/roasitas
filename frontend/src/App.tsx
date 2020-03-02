@@ -1,14 +1,20 @@
 import * as React from "react";
-import "./css/App.css";
-import Posts from "./components/Posts";
+import "./App.css";
+import Posts from "./components/news/Posts";
 import { Provider } from "react-redux";
 import store from "./store";
-import Nav from "./components/Nav";
+import Nav from "./components/nav/Nav";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
-import About from "./pages/About";
-import Home from "./pages/Home";
-import Menu from "./pages/Menu";
-import Story from "./components/Story";
+import About from "./components/about/About";
+import Home from "./components/home/Home";
+import Menu from "./components/menu/Menu";
+import Story from "./components/news/Story";
+import Dnd from './components/mep/DnDTutorial';
+// import HorizontalMenu from './components/mockAppStoreAPI/HorizontalMenu';
+
+
+
+
 
 const App: React.FC = () => {
   return (
@@ -23,8 +29,7 @@ const App: React.FC = () => {
             <Route path="/news" exact={true} component={Posts} />
             <Route path="/news/:slug" exact={true} component={Story} />
             <Route path="/about" exact={true} component={About} />
-
-
+            <Route path="/mep" exact={true} component={Dnd} />
           </Switch>
       </div>
       </BrowserRouter>
